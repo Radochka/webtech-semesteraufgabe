@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col s12">
+        <div class="page-subtitle">
+            <h4>Deine Wünsche:</h4>
+            <button class="waves-effect waves-light btn grey darken-1 btn-small" (click)="onAddPosition()">
+                Wunsch hinzufügen
+            </button>
+        </div>
+
+        <!-- hier wird die Positionen abgerufen -->
+        <div class="center" *ngIf="positions.length == 0">Wunschliste hat keine Positionen</div>
+        <div class="collection" *ngIf="positions.length !== 0">
+            <table class="striped">
+                <tbody>
+                    <tr *ngFor="let pos of positions">
+                        <td id="wuensche">{{ pos.title }}</td>
+                        <td><a href="{{pos.link}}" target="_blank">{{ pos.link }}</a></td>
+                        <td><a (click)="onSelectPosition(pos)"><i class="material-icons">update</i></a></td>
+                        <td><a (click)="onDeletePostion(pos)"><i class="material-icons">delete</i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+    </div>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- Modalfenster auf Materializecss.com-JS-Modal -->
+    <div class="modal" #modal>
+        <!-- modal um diese Fenster zu steuern -->
+        <div class="modal-content">
+            <h4 class="mb1">Wunsch hinzufügen</h4>
+            <div class="input-field">
+                <input formControlName="title" id="pos-title" type="text" required>
+                <label for="pos-title">Dein Wunsch</label>
+            </div>
+            <div class="input-field">
+                <input formControlName="link" id="pos-link" type="url">
+                <label for="pos-link">Link</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="modal-action waves-effect waves-black btn-flat"
+                (click)="onCancel()">Abbrechen</button>
+            <button class="modal-action btn waves-effect" type="submit">Speichern</button>
+        </div>
+    </div>
+</form>

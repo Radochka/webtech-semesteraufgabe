@@ -1,0 +1,5 @@
+ng new client
+ncu -u
+npm i
+npm i -g formio-cli
+npm i -g npm-check-updates

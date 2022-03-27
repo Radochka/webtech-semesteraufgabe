@@ -1,0 +1,88 @@
+<form
+  class="auth-block"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">Registriere dich</span>
+
+      <div class="input-field">
+        <input
+          formControlName="name"
+          id="name"
+          type="text"
+          [ngClass]="{'invalid': form.get('name').invalid && form.get('name').touched}"
+        >
+        <label for="name">Dein Vorname:</label>
+        <span
+          class="helper-text red-text"
+          *ngIf="form.get('name').invalid && form.get('name').touched"
+        >
+          <span *ngIf="form.get('name').errors['required']">Namenfeld darf nicht leer sein</span>
+        </span>
+      </div>
+
+      <div class="input-field">
+        <input
+          formControlName="geburtsdatum"
+          id="geburtsdatum"
+          type="date"
+          [ngClass]="{'invalid': form.get('geburtsdatum').invalid && form.get('geburtsdatum').touched}"
+        >
+        <label for="geburtsdatum">Dein Geburtsdatum:</label>
+        <span
+          class="helper-text red-text"
+          *ngIf="form.get('geburtsdatum').invalid && form.get('geburtsdatum').touched"
+        >
+          <span *ngIf="form.get('geburtsdatum').errors['required']">Gib dein Geburtsdatum ein</span>
+        </span>
+      </div>
+
+      <div class="input-field">
+        <input
+          formControlName="email"
+          id="email"
+          type="email"
+          [ngClass]="{'invalid': form.get('email').invalid && form.get('email').touched}"
+        >
+        <label for="email">Email:</label>
+        <span
+          class="helper-text red-text"
+          *ngIf="form.get('email').invalid && form.get('email').touched"
+        >
+          <span *ngIf="form.get('email').errors['required']">Email darf nicht leer sein</span>
+          <span *ngIf="form.get('email').errors['email']">Email ist nicht korrekt</span>
+        </span>
+      </div>
+
+      <div class="input-field">
+        <input
+          formControlName="password"
+          id="password"
+          type="password"
+          [ngClass]="{'invalid': form.get('password').invalid && form.get('password').touched}"
+        >
+        <label for="password">Пароль:</label>
+        <span
+          class="helper-text red-text"
+          *ngIf="form.get('password').invalid && form.get('password').touched"
+        >
+          <span *ngIf="form.get('password').errors['required']">Du musst Password eingeben</span>
+        </span>
+      </div>
+    </div>
+
+
+    <div class="card-action">
+      <button
+        type="submit"
+        class="modal-action btn waves-effect"
+        [disabled]="form.invalid || form.disabled"
+      >
+        Registrieren
+      </button>
+    </div>
+
+  </div>
+</form>

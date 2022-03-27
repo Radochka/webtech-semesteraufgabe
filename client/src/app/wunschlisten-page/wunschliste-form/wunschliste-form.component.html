@@ -1,0 +1,52 @@
+<div class="page-title">
+  <h4>
+    <a routerLink="/wunschlisten"></a>
+    {{isNew ? 'Neue Wunschliste erstellen' : 'Wunschliste bearbeiten'}}
+  </h4>
+  <span>
+    <button *ngIf="!isNew" class="btn btn-small red" (click)="deleteWunschliste()">
+      <i class="material-icons">delete</i>
+    </button>
+  </span>
+</div>
+
+<div class="row">
+  <form class="col s12 l6" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="input-field">
+      <input formControlName="name" id="name" type="text"
+        [ngClass]="{'invalid': form.get('name').invalid && form.get('name').touched}">
+      <label for="name">Name</label>
+      <span class="helper-text red-text" *ngIf="form.get('name').invalid && form.get('name').touched">
+        <span *ngIf="form.get('name').errors['required']">Name darf nicht leer sein</span>
+      </span>
+    </div>
+    <div class="input-field">
+      <input formControlName="datum" id="datum" type="date"
+        [ngClass]="{'invalid': form.get('datum').invalid && form.get('datum').touched}">
+      <label for="datum">Datum</label>
+      <span class="helper-text red-text" *ngIf="form.get('datum').invalid && form.get('datum').touched">
+        <span *ngIf="form.get('datum').errors['required']">Datum darf nicht leer sein</span>
+      </span>
+    </div>
+
+    <div>
+      <input type="file" class="dn" (change)="onFileUpload($event)" #input>
+      <button type="button" (click)="triggerClick()" [disabled]="form.disabled"
+        class="waves-effect waves-light btn orange lighten-2 mb2">
+        Bild hochladen
+      </button>
+    </div>
+
+    <div>
+      <button type="submit" [disabled]="form.invalid || form.disabled" class="waves-effect waves-light btn">
+        Speichern
+      </button>
+    </div>
+  </form>
+
+  <div class="col s12 l4 center">
+    <img class="responsive-img h200" [src]="imagePreview" *ngIf="imagePreview">
+  </div>
+</div>
+
+<app-position-form *ngIf="wunschliste?._id" [wunschlisteId]="wunschliste._id"></app-position-form>

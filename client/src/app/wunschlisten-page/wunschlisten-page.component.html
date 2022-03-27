@@ -1,0 +1,42 @@
+<div class="page-title">
+    <h4>Deine Wunschlisten</h4>
+    <button
+      class="waves-effect waves-light btn grey darken-1"
+      routerLink="/wunschlisten/new"
+    >
+      neue wunschliste
+    </button>
+  </div>
+  
+  <div class="row" *ngIf="wunschlisten | async as wunschlisten; else loader">
+    <div class="col s12">
+      <div class="collection" *ngIf="wunschlisten.length !== 0; else empty">
+        <table class="highlight">
+          <thead>
+              <tr>
+                  <th scope="col">Nr</th>
+                  <th scope="col">Ereignis</th>
+                  <th scope="col">findet statt</th>
+                  <th scope="col"></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let wunschliste of wunschlisten; let i=index">
+                  <td>{{ i+1 }} </td>
+                  <td>{{ wunschliste.name }}</td>
+                  <td>{{ wunschliste.datum }}</td>
+                  <td><a [routerLink]="['/wunschlisten', wunschliste._id]"><i class="material-icons">update</i></a></td>
+              </tr>
+          </tbody>
+      </table>
+      </div>
+      <ng-template #empty>
+        <div class="center">Du hast noch keine Wunschlisten</div>
+      </ng-template>
+    </div>
+  </div>
+  <ng-template #loader>
+    <app-loader></app-loader>
+  </ng-template>
+  
+  
