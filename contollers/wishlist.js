@@ -57,7 +57,7 @@ module.exports.updateList = async function (req, res) {
 module.exports.removeList = async function (req, res) {
     try{
         await Wishlist.remove({_id: req.params.id})
-        await Position.remove({wunschlisten: req.params.id})
+        await Position.remove({wunschliste: req.params.id})
         res.status(200).json({
             message: 'Wunschliste wurde gelöscht'
         })

@@ -10,10 +10,10 @@
         <!-- hier wird die Positionen abgerufen -->
         <div class="center" *ngIf="positions.length == 0">Wunschliste hat keine Positionen</div>
         <div class="collection" *ngIf="positions.length !== 0">
-            <table class="striped">
+            <table class="highlight">
                 <tbody>
                     <tr *ngFor="let pos of positions">
-                        <td id="wuensche">{{ pos.title }}</td>
+                        <td>{{ pos.title }}</td>
                         <td><a href="{{pos.link}}" target="_blank">{{ pos.link }}</a></td>
                         <td><a (click)="onSelectPosition(pos)"><i class="material-icons">update</i></a></td>
                         <td><a (click)="onDeletePostion(pos)"><i class="material-icons">delete</i></a></td>

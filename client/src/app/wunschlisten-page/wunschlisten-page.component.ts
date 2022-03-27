@@ -9,7 +9,7 @@ import { WishlistService } from '../shared/services/wishlist.service';
   styleUrls: ['./wunschlisten-page.component.css']
 })
 export class WunschlistenPageComponent implements OnInit {
-
+//type Observable, weil methode getLists erwartet dieser type
   wunschlisten!: Observable<Wunschliste[]>
   constructor(private wl: WishlistService) { }
 

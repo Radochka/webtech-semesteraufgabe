@@ -36,7 +36,7 @@ export class AuthService {
     return !!this.token //!!heißt, dass wir den wert auf boolean setzen
   }
   logout() {
-    this.setToken("")
+    this.setToken("")//token wird auf entfernt
     localStorage.clear()
   }
 }

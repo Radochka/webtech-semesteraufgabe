@@ -9,6 +9,7 @@ import { Wunschliste, Message } from '../interface';
 export class WishlistService {
 
   constructor(private http: HttpClient) { }
+  
   getLists(): Observable<Wunschliste[]>{
     return this.http.get<Wunschliste[]>('api/wunschlisten')
   }

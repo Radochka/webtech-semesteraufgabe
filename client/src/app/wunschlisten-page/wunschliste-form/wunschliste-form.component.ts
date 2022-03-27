@@ -84,6 +84,7 @@ export class WunschlisteFormComponent implements OnInit {
   }
 
   deleteWunschliste() {
+    //fenster um eine Entscheidung zu treffen
     const decision = window.confirm(`Wunschliste "${this.wunschliste.name}" löschen?`)
     if (decision) {
       if (this.wunschliste._id != null) {

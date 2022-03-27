@@ -1,33 +1,23 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-import {AuthService} from "../../services/auth.service";
-import {Router} from "@angular/router";
-import {MaterialService} from "../../classes/material.service";
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../../services/auth.service";
+import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-site-layout',
   templateUrl: './site-layout.component.html',
   styleUrls: ['./site-layout.component.css']
 })
-export class SiteLayoutComponent  {
-
-  @ViewChild('floating')
-
-  floatingRef!: ElementRef
+export class SiteLayoutComponent {
 
   links = [
     //{url:'/daten', name: 'Meine Daten'},
-    {url:'/wunschlisten', name: 'Alle Wunschlisten'},
+    { url: '/wunschlisten', name: 'Alle Wunschlisten' },
     //{url:'/kinder', name: 'Kinder'},
   ]
   constructor(private auth: AuthService,
-              private router: Router) { }
+    private router: Router) { }
 
-  //floating-Button
-  ngAfterViewInit() {
-    MaterialService.initialFloatingButton(this.floatingRef)
-  }
-
-  logout(event: Event){
-    event.preventDefault()
+  logout() {
     this.auth.logout()
     this.router.navigate(['/login'])
   }

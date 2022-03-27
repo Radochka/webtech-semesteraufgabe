@@ -15,12 +15,8 @@ export class MaterialService {
     M.toast({html: message})
   }
 
-  static initialFloatingButton(ref: ElementRef) {
-    M.FloatingActionButton.init(ref.nativeElement)
-  }
-
-
-  static updateTextInputs(){
+  //diese Methoder ruf die function des Materialize
+  static updateTextInputs(){ 
     M.updateTextFields()
   }
 
