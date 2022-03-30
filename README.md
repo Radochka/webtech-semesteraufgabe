@@ -1,4 +1,4 @@
-WUNSCHLISTE - Webanwendung
+<h1>WUNSCHLISTE - Webanwendung</h1>
 
 Diese Webanwendung ist für Eltern gedacht, die Wunschlisten ihrer Kinder an einem Platz speichern und immer wieder abrufen möchten.
 Ich als Elternteil kann mich registrieren und einlogen, Kinder hinzufügen und Wunschlisten meiner Kinder abrufen und updaten. Kinder, die ich angelegt habe, können sich einloggen, Wunschlisten erstellen, abrufen, ändern und löschen. Die Seite wird weiter von mir entwickelt.
@@ -27,7 +27,7 @@ Es wurde concurrently installiert, um Back- und Frontend gleichzeitig zu starten
 
 
 
-Componente:
+**<h3>Componente:</h3>**
    - Auth-Layout:
         - login-page - Anmeldung
         - register-page - Registrierung
@@ -38,7 +38,7 @@ Componente:
        - loader - um bei Daten laden, wird diese Loader abgerufen
 
 
-Services:
+**<h3>Services:</h3>**
 
     - WunschlisteService, um Wunschlisten abrufen, erstellen, ändern und löschen,
     
