@@ -1,5 +1,7 @@
-Diese Application ist für Eltern gedacht, die Wunschlisten ihrer Kinder an einem Platz speichern und immer wieder abrufen möchten.
-Ich als Elternteil kann mich registrieren und einlogen, Kinder hinzufügen und Wunschlisten meiner Kinder abrufen und updaten. Kinder, die ich angelegt habe, können sich einloggen, Wunschlisten erstellen, abrufen, ändern und löschen.
+WUNSCHLISTE - Webanwendung
+
+Diese Webanwendung ist für Eltern gedacht, die Wunschlisten ihrer Kinder an einem Platz speichern und immer wieder abrufen möchten.
+Ich als Elternteil kann mich registrieren und einlogen, Kinder hinzufügen und Wunschlisten meiner Kinder abrufen und updaten. Kinder, die ich angelegt habe, können sich einloggen, Wunschlisten erstellen, abrufen, ändern und löschen. Die Seite wird weiter von mir entwickelt.
 
 Da es für die Semesteraufgabe zu viel ist und rechtszetig die ganzen Anforderungen zu erfüllen nicht schaffe, habe ich nur minimale Kriterien erfüllt. D.h
 
